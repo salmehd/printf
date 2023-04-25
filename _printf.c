@@ -1,9 +1,11 @@
 #include "main.h"
+
 /**
  * _printf -  function that selects the correct function to print.
- * @format: identifier 
+ * @format: identifier
  * Return:  length of the string.
  */
+
 int _printf(const char * const format, ...)
 {
 	convert_match m[] = {

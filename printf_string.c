@@ -2,7 +2,7 @@
 
 /**
  * printf_string - function that  print a string
- * @val: argumen 
+ * @val: argumen
  * Return:   length string
  */
 
