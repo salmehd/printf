@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _printf -  function that selects the correct function to print.
+ * _printf -  function that selects the function to print
  * @format: identifier
  * Return:  length of the string.
  */
@@ -18,29 +18,29 @@ int _printf(const char *format, ...)
 	};
 
 	va_list args;
-	int x = 0, y, len = 0;
+	int i = 0, j, len = 0;
 
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
 Here:
-	while (format[x] != '\0')
+	while (format[i] != '\0')
 	{
-		y = 13;
-		while (y >= 0)
+		j = 13;
+		while (j >= 0)
 		{
-			if (m[y].id[0] == format[x] && m[y].id[1] == format[x + 1])
+			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])
 			{
-				len += m[y].f(args);
-				x = x + 2;
+				len += m[j].f(args);
+				i = i + 2;
 				goto Here;
 			}
-			y--;
+			j--;
 		}
-		_putchar(format[x]);
+		_putchar(format[i]);
 		len++;
-		x++;
+		i++;
 	}
 	va_end(args);
 	return (len);
