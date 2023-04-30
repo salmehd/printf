@@ -1,12 +1,10 @@
 #include "main.h"
-
 /**
- * _printf -  function that selects the function to print
- * @format: identifier
- * Return:  length of the string.
+ * _printf - is a function that selects the correct function to print.
+ * @format: identifier to look for.
+ * Return: the length of the string.
  */
-
-int _printf(const char *format, ...)
+int _printf(const char * const format, ...)
 {
 	convert_match m[] = {
 		{"%s", printf_string}, {"%c", printf_char},

@@ -2,22 +2,22 @@
 
 /**
  * printf_srev - function that prints a str in reverse
- * @args:    type struct va_arg printf arguments
- * Return:  string
+ * @args: type struct va_arg where is allocated printf arguments
+ * Return: the string
  */
 
 int printf_srev(va_list args)
 {
 
 	char *s = va_arg(args, char*);
-	int x;
-	int y = 0;
+	int i;
+	int j = 0;
 
 	if (s == NULL)
 		s = "(null)";
-	while (s[y] != '\0')
-		y++;
-	for (x = y - 1; x >= 0; x--)
-		_putchar(s[x]);
-	return (y);
+	while (s[j] != '\0')
+		j++;
+	for (i = j - 1; i >= 0; i--)
+		_putchar(s[i]);
+	return (j);
 }
