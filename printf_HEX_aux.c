@@ -1,7 +1,6 @@
 #include "main.h"
-
 /**
- * printf_hex - function that prints hexgecimal number.
+ * printf_HEX_aux - function that prints hexgecimal number.
  * @num: number to print
  * Return: counter
  */
@@ -19,7 +18,7 @@ num /= 16;
 counter++;
 }
 counter++;
-array = malloc(counter * sizeof(int));
+array = malloc(counter *sizeof(int));
 
 for (i = 0; i < counter; i++)
 {
