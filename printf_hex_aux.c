@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * printf_hex_aux - function to prints an hexgecimal number.
- * @num: arguments
- * Return: counter
+ * printf_hex_aux - function that prints an hexgecimal number.
+ * @num:   arguments
+ * Return:   counter
  */
 
 int printf_hex_aux(unsigned long int num)
 {
-	long int x;
+	long int i;
 	long int *array;
 	long int counter = 0;
 	unsigned long int temp = num;
@@ -21,16 +21,16 @@ int printf_hex_aux(unsigned long int num)
 	counter++;
 	array = malloc(counter * sizeof(long int));
 
-	for (x = 0; x < counter; x++)
+	for (i = 0; i < counter; i++)
 	{
-		array[x] = temp % 16;
+		array[i] = temp % 16;
 		temp /= 16;
 	}
-	for (x = counter - 1; x >= 0; x--)
+	for (i = counter - 1; i >= 0; i--)
 	{
-		if (array[x] > 9)
-			array[x] = array[x] + 39;
-		_putchar(array[x] + '0');
+		if (array[i] > 9)
+			array[i] = array[i] + 39;
+		_putchar(array[i] + '0');
 	}
 	free(array);
 	return (counter);

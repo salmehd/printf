@@ -8,20 +8,20 @@
 int printf_exclusive_string(va_list val)
 {
 	char *s;
-	int x, len = 0;
+	int i, len = 0;
 	int cast;
 
 	s = va_arg(val, char *);
 	if (s == NULL)
 		s = "(null)";
-	for (x = 0; s[x] != '\0'; x++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[x] < 32 || s[x] >= 127)
+		if (s[i] < 32 || s[i] >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');
 			len = len + 2;
-			cast = s[x];
+			cast = s[i];
 			if (cast < 16)
 			{
 				_putchar('0');
@@ -31,7 +31,7 @@ int printf_exclusive_string(va_list val)
 		}
 		else
 		{
-			_putchar(s[x]);
+			_putchar(s[i]);
 			len++;
 		}
 	}
